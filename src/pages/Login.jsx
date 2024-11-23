@@ -24,8 +24,8 @@ export default function Login() {
 
     const onSubmit = async (datos) => {
         const usuario = {
-            mail: datos.mail,
-            pass: datos.pass,
+            nombre_usr: datos.nombre_usr,
+            psw_usr: datos.psw_usr,
         };
 
         const parametros = {
@@ -37,7 +37,7 @@ export default function Login() {
             body: JSON.stringify(usuario),
         };
 
-        const url = "http://localhost:5173/usuario/login";
+        const url = "http://localhost:8081/usuario/login/";
 
         try {
             const res = await fetch(url, parametros);
@@ -45,8 +45,8 @@ export default function Login() {
 
             if (res.ok) {
                 sessionStorage.setItem('token', body.token);
-                toast.success(`Bienvenido ${body.datos.nombre}`, confToast);
-                navigate("/vehiculos");
+                toast.success(`Bienvenido ${body.datos.nombre_usr}`, confToast);
+                navigate("/landingpage");
             } else {
                 toast.error(body.message, confToast);
             }
@@ -64,12 +64,12 @@ export default function Login() {
                     <label className='label_login'>Nombre de Usuario</label>
                     <input
                         className='input_login'
-                        type="email"
-                        {...register('mail', { required: 'Se requiere un usuario para ingresar' })}
+                        type="nombre"
+                        {...register('nombre_usr', { required: 'Se requiere un usuario para ingresar' })}
                     />
-                    {errors.mail && (
+                    {errors.nom_usr && (
                         <div className="error_message">
-                            {errors.mail.message}
+                            {errors.nombre_usr.message}
                         </div>
                     )}
                 </div>
@@ -78,15 +78,15 @@ export default function Login() {
                     <input
                         className='input_login'
                         type="password"
-                        {...register('pass', {
+                        {...register('psw_usr', {
                             required: 'Contraseña es requerida',
-                            minLength: { value: 8, message: 'Debe tener al menos 8 caracteres' },
-                            maxLength: { value: 16, message: 'Debe tener máximo 16 caracteres' },
+                            minLength: { value: 4, message: 'Debe tener al menos 4 caracteres' },
+                            maxLength: { value: 8, message: 'Debe tener máximo 8 caracteres' },
                         })}
                     />
-                    {errors.pass && (
+                    {errors.psw_usr && (
                         <div className="error_message">
-                            {errors.pass.message}
+                            {errors.psw_usr.message}
                         </div>
                     )}
                 </div>

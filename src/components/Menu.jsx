@@ -85,7 +85,8 @@ export default function Menu() {
                                  <nav class="navbar bg-body-tertiary">
                                    <div class="nav-link">
                                      <br /><br /><br />
-                                      <a class="navbar-brand" href="/login">INICIO</a>
+                                      <a class="navbar-brand" href="/">HOME</a>
+                                      <a class="navbar-brand" href="/login">INGRESAR</a>
                                     </div>
                                 </nav>
                             </ul>
