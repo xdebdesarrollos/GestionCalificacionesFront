@@ -1,5 +1,5 @@
 # React + Vite
 
-Sistema Calificaciones escolare. 
+Sistema Calificaciones escolar. 
 Aqui tenemos las carpetas y archivos del Frontend.
 
