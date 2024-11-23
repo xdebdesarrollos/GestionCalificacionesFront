@@ -1,0 +1,227 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Sección de médicos */
+#medicos {
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: lightgreen;
+    color: black;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: darkred;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+
+button[type="submit"]:hover {
+    background-color: green;
+}
+
+
+/* CSS para el modal de confirmar eliminacion */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    animation: scaleIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Estilos básicos para crear cuenta*/
+.crear-cuenta-container {
+    width: 100%; /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 20px 30px; /* Centrado horizontal y margen superior más pequeño */
+    padding: 40px; /* Espaciado interno ajustado */
+    padding-top: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Título */
+  .crear-cuenta-container h2 {
+    text-align: center;
+    margin-bottom: 15px; /* Menor separación inferior */
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+    color: #333;
+  }
+  
+  /* Formulario en dos columnas */
+  .crear-cuenta-container form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    column-gap: 15px; /* Espacio entre columnas ajustado */
+    row-gap: 15px; /* Espacio entre filas ajustado */
+  }
+  
+  /* Etiquetas */
+  .crear-cuenta-container label {
+    font-size: 0.9rem; /* Tamaño de fuente reducido */
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Campos de entrada */
+  .crear-cuenta-container input,
+  .crear-cuenta-container select {
+    width: 100%; /* Asegura que ocupen todo el ancho */
+    padding: 8px; /* Padding ajustado */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    box-sizing: border-box;
+  }
+  
+  /* Select */
+  .crear-cuenta-container select {
+    appearance: none;
+    background-color: white;
+  }
+  
+  /* Botón de enviar ocupa ambas columnas */
+  .crear-cuenta-container button {
+    grid-column: span 2; /* Ocupa las dos columnas */
+    padding: 12px; /* Ajuste del padding */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Tamaño de fuente ajustado */
+    cursor: pointer;
+  }
+  
+  .crear-cuenta-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Mensajes de error */
+  .crear-cuenta-container p {
+    color: red;
+    font-size: 0.8rem; /* Tamaño de fuente reducido */
+    margin-top: 3px;
+  }
+  
+  
+  

@@ -1,0 +1,32 @@
+
+.landing-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la pantalla */
+    background-color: #f0f8ff; /* Azul claro */
+    text-align: center;
+    color: #003366; /* Azul oscuro */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Contenido de cada landing */
+  .landing-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .landing-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .landing-content p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
