@@ -15,7 +15,7 @@ import VehiculosCard from "./pages/Vehiculos_card";
 import ReservaEdit from "./pages/ReservaEdit";
 import Reservas from "./pages/Reservas";
 import LandingPage from "./pages/LandingPage";
-
+import Materias from "./pages/Materias";
 
 
 function App() {
@@ -35,13 +35,13 @@ function App() {
                         <Route path="/landingpage" element={<LandingPage />}></Route>
 
                         {/* Rutas del MENU */}
-                        <Route path="/vehiculos" element={<VehiculosCard />} />
+                        <Route path="/materias" element={<Materias />} />
                         <Route path="/vehiculo/crear/" element={<VehiculoEdit />} />
                         <Route path="/vehiculo/edit/:matricula" element={<VehiculoEdit />} />
 
 
                         
-                        <Route path="/reservas" element={<Reservas />} />
+                        <Route path="/cursos" element={<Reservas />} />
                         <Route path="/reservas/crear/" element={<ReservaEdit />} />
                         <Route path="/reservas/edit/:matricula" element={<ReservaEdit />} />
                         <Route path="/blog" element={<Blog />} />

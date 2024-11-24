@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/LandingPage.css";
 const rol_usr = sessionStorage.getItem('rol_usr');
+const nombre = sessionStorage.getItem('nombre');
 const LandingPage = () => {
   // Estado inicial para probar diferentes roles
  // const [userRole, setUserRole] = useState(nombre_usr); // Cambia según el rol: "alumno", "director", etc.
@@ -10,8 +11,8 @@ const LandingPage = () => {
       {/* Administrador */}
       {rol_usr === "Admin" && (
         <div className="landing-content">
-          <h1>Bienvenido, Administrador</h1>
-          <p>Accede a los listados de clases, calificaciones y carga de notas.</p>
+          <h1>Bienvenido, Administrador {nombre}</h1>
+          <p>Accede a toda la Configuración del sistema.</p>
         </div>
       )}
       {/* Profesor */}

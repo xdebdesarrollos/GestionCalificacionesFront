@@ -75,10 +75,9 @@ const CrearCuenta = () => {
 
   return (
     <div className="crear-cuenta-container">
-      <h1>Crear Cuenta</h1>
-      <h2>Datos de Persona</h2>
+      <h2>Datos de Persona</h2>     
       <form onSubmit={handleSubmit}>
-        
+
         <div>
           <label htmlFor="nombre">Nombre:</label>
           <input
@@ -120,7 +119,7 @@ const CrearCuenta = () => {
           />
         </div>
         <div>
-          <label htmlFor="fechaNacimiento">Fecha de Nacimiento:</label>
+          <label htmlFor="fechaNacimiento">Fecha de Nac.:</label>
           <input
             type="date"
             id="fec_nac"
@@ -186,12 +185,12 @@ const CrearCuenta = () => {
             onChange={handleChange}
           >
             <option value="">Seleccione el Rol</option>
-            <option value="1">Administrador</option>
-            <option value="2">Preceptor</option>
-            <option value="3">Profesor</option>
-            <option value="4">Director</option>
-            <option value="5">Tutor</option>
-            <option value="6">Alumno</option>
+            <option value="Admin">Admin</option>
+            <option value="Preceptor">Preceptor</option>
+            <option value="Profesor">Profesor</option>
+            <option value="Director">Director</option>
+            <option value="Tutor">Tutor</option>
+            <option value="Alumno">Alumno</option>
           </select>
         </div>
         <div>
@@ -207,7 +206,7 @@ const CrearCuenta = () => {
         <div>
           <label htmlFor="psw_usr">Elija una Contraseña:</label>
           <input
-            type="text"
+            type="password"
             id="psw_usr"
             name="psw_usr"
             value={formData.psw_usr}

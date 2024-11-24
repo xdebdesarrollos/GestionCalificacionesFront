@@ -52,13 +52,13 @@ export default function Login() {
             }
                 */
             if (res.ok) {
-    sessionStorage.setItem('token', body.token);
-    sessionStorage.setItem('rol_usr', body.datos.rol_usr);
-    toast.success(`Bienvenido ${body.datos.rol_usr}`, confToast);
-    navigate("/landingpage");
-} else {
-    toast.error(body.message, confToast);
-}   
+                sessionStorage.setItem('token', body.token);
+                sessionStorage.setItem('rol_usr', body.datos.rol_usr);
+                toast.success(`Bienvenido ${body.datos.rol_usr}`, confToast);
+                navigate("/landingpage");
+            } else {
+                toast.error(body.message, confToast);
+            }   
         } catch (error) {
             toast.error(error.message, confToast);
         }

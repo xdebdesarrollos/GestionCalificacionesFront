@@ -29,19 +29,26 @@ export default function Menu() {
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
-                            <li className="nav-item">
+                        <li className="nav-item">
                                 <Link
                                     className="nav-link"
-                                    to="/reservas">
-                                    Reservas
+                                    to="/LandingPage">
+                                    Principal
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className="nav-link active"
+                                    className="nav-link"
+                                    to="/materias">
+                                    Materias
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="nav-link"
                                     aria-current="page"
-                                    to="/vehiculos">
-                                    Vehiculos
+                                    to="/cursos">
+                                    Cursos
                                 </Link>
                             </li>
                             <li className="nav-item dropdown">
@@ -84,7 +91,7 @@ export default function Menu() {
                             <ul className="navbar-nav ms-auto">
                                  <nav class="navbar bg-body-tertiary">
                                    <div class="nav-link">
-                                     <br /><br /><br />
+                                     <br />
                                       <a class="navbar-brand" href="/">HOME</a>
                                       <a class="navbar-brand" href="/login">INGRESAR</a>
                                     </div>

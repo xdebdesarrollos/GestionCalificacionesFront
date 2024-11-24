@@ -147,16 +147,23 @@ button[type="submit"]:hover {
 
 /* Estilos básicos para crear cuenta*/
 .crear-cuenta-container {
-    width: 100%; /* Ocupa el 90% del ancho de la pantalla */
-    max-width: 1200px; /* Ancho máximo */
-    margin: 20px 30px; /* Centrado horizontal y margen superior más pequeño */
-    padding: 40px; /* Espaciado interno ajustado */
-    padding-top: 40px;
+ /*   width: 100%; /* Ocupa el 90% del ancho de la pantalla */
+ /*   max-width: 1200px; /* Ancho máximo */
+  /*  margin: 10px 30px; /* Centrado horizontal y margen superior más pequeño */
+ /*   padding: 40px; /* Espaciado interno ajustado */
+ /*   padding-top: 40px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 50px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
+    width: 90%; /* Se ajusta al 90% del ancho de la pantalla */
+    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centrar en la pantalla */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   }
   
   /* Título */
@@ -170,7 +177,7 @@ button[type="submit"]:hover {
   /* Formulario en dos columnas */
   .crear-cuenta-container form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    grid-template-columns: repeat(3, 1fr); /* Dos columnas iguales */
     column-gap: 15px; /* Espacio entre columnas ajustado */
     row-gap: 15px; /* Espacio entre filas ajustado */
   }
