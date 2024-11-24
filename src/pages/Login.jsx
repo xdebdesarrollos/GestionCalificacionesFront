@@ -43,13 +43,22 @@ export default function Login() {
             const res = await fetch(url, parametros);
             const body = await res.json();
 
-            if (res.ok) {
+           /* if (res.ok) {
                 sessionStorage.setItem('token', body.token);
                 toast.success(`Bienvenido ${body.datos.nombre_usr}`, confToast);
                 navigate("/landingpage");
             } else {
                 toast.error(body.message, confToast);
             }
+                */
+            if (res.ok) {
+    sessionStorage.setItem('token', body.token);
+    sessionStorage.setItem('rol_usr', body.datos.rol_usr);
+    toast.success(`Bienvenido ${body.datos.rol_usr}`, confToast);
+    navigate("/landingpage");
+} else {
+    toast.error(body.message, confToast);
+}   
         } catch (error) {
             toast.error(error.message, confToast);
         }
