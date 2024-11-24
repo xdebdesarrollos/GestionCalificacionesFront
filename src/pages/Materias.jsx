@@ -1,10 +1,12 @@
+
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Materias() {
     const [materias, setMaterias] = useState([]);
+    const navigate = useNavigate();
 
     const toastConf = {
         position: 'bottom-center',
@@ -17,7 +19,6 @@ export default function Materias() {
         theme: 'light',
     };
 
-    // Obtener materias al cargar el componente
     useEffect(() => {
         async function obtenerDatos() {
             try {
@@ -45,7 +46,6 @@ export default function Materias() {
         obtenerDatos();
     }, []);
 
-    // Función para eliminar una materia
     const eliminarMateria = async (nom_materia) => {
         try {
             const url = `http://localhost:8081/materia/${nom_materia}`;
@@ -53,7 +53,6 @@ export default function Materias() {
 
             if (response.ok) {
                 toast.success(`Materia "${nom_materia}" eliminada con éxito.`, toastConf);
-                // Actualizar la lista de materias después de eliminar
                 setMaterias(materias.filter(materia => materia.nom_materia !== nom_materia));
             } else {
                 const body = await response.json();
@@ -64,26 +63,27 @@ export default function Materias() {
         }
     };
 
-    const filas = materias.map((materia, index) => {
-        return (
-            <tr key={index}>
-                <td>{materia.id_materia}</td>
-                <td>{materia.nom_materia}</td>
-                <td>
-                    <Link to={`/materia/${materia.nom_materia}`} className="btn btn-primary">
-                        <span className="material-symbols-outlined">Editar</span>
-                    </Link>
+    const filas = materias.map((materia, index) => (
+        <tr key={index}>
+            <td>{materia.id_materia}</td>
+            <td>{materia.nom_materia}</td>
+            <td>
+                <button
+                    className="btn btn-primary"
+                    onClick={() => navigate(`/materias/editar/${materia.nom_materia}`)}
+                >
+                    <span className="material-symbols-outlined">Editar</span>
+                </button>
 
-                    <button
-                        className="btn btn-danger"
-                        onClick={() => eliminarMateria(materia.nom_materia)}
-                    >
-                        <span className="material-symbols-outlined">Eliminar</span>
-                    </button>
-                </td>
-            </tr>
-        );
-    });
+                <button
+                    className="btn btn-danger"
+                    onClick={() => eliminarMateria(materia.nom_materia)}
+                >
+                    <span className="material-symbols-outlined">Eliminar</span>
+                </button>
+            </td>
+        </tr>
+    ));
 
     return (
         <>

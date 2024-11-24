@@ -17,6 +17,7 @@ import Reservas from "./pages/Reservas";
 import LandingPage from "./pages/LandingPage";
 import Materias from "./pages/Materias";
 import CrearMateria from "./pages/CrearMateria";
+import EditarMateria from "./pages/EditarMateria";
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
                         {/* Rutas del MENU */}
                         <Route path="/materias" element={<Materias />} />
                         <Route path="/materias/crear/" element={<CrearMateria />} />
+                        <Route path="/materias/editar/:nom_materia" element={<EditarMateria />} />
                         <Route path="/vehiculo/edit/:matricula" element={<VehiculoEdit />} />
 
 
