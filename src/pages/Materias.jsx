@@ -4,82 +4,101 @@ import { Card, Modal, Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Materias = () => {
+export default function Materias() {
+
     const [materias, setMaterias] = useState([]);
-    const configToast = {
+
+    const toastConf = {
         position: 'bottom-center',
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        theme: 'light',
+        progress: undefined,
+        theme: 'light'
     }
 
     useEffect(() => {
+
         async function obtenerDatos() {
             try {
                 const parametros = {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
-                        'authorization': sessionStorage.getItem('token'),
-                    },
-                };
-
+                        'authorization': sessionStorage.getItem('token')
+                    }
+                }
                 const url = "http://localhost:8081/materia";
 
-                const response = await fetch(url, parametros);
-                const body = await response.json();
+                let response = await fetch(url, parametros)
+                let body = await response.json();
 
                 if (response.ok) {
                     setMaterias(body);
                 } else {
-                    toast.error(body.message, configToast);
+                    toast.error(body.message, toastConf);
                 }
             } catch (error) {
-                console.error(error);
+                toast.error(error.message, toastConf);
             }
-        };
-
+        }
         obtenerDatos();
-    }, []);
+    },
+        []
+    );
 
 
-    //  const tokenDecoded = jwt_decode(sessionStorage.getItem('token'));
-    //  const rol = tokenDecoded.rol;
+    const filas = materias.map((materia, index) => {
+        return (
+            <tr key={index}>
+                <td>{materia.id_materia}</td>
+                <td>{materia.nom_materia}</td>
+                <td>
+                    <Link to={`/materia/${materia.nom_materia}`} className='btn btn-primary'>
+                        <span className="material-symbols-outlined">editar</span>
+                    </Link>
+
+                    {/* <button className='btn btn-danger' onClick={() => showModal(vehiculo.vehiculo_id)}>
+                        <span className="material-symbols-outlined">
+                            delete
+                        </span>
+                    </button> */}
+                </td>
+            </tr>
+        )
+
+    });
 
     return (
         <>
-            <div className="d-flex flex-wrap justify-content-start">
-                {materias.map((materia, index) => (
-                    <Card key={index} style={{ width: '18rem', margin: '10px' }}>
-                        <Card.Body>
-                            <Card.Title>{materia.nom_materia}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{materia.id_materia}</Card.Subtitle>
-                            <Card.Text>Nombre {materia.nom_materia}</Card.Text>
-                            {/* aca podria agregar la marca */}
-                            <div className="d-flex justify-content-end align-items-baseline">
-                                <Button as={Link} to={`/materia/${materia.id_materia}`} variant="primary">
-                                    Editar
-                                </Button>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                ))}
-            </div>
-            {/* 
-            {rol === 'Administrador' && (
-                <Link to={`/vehiculo/crear/`} className='btn btn-primary'>
+            <div>
+
+                <Link to={`/materia/`} className='btn btn-primary'>
                     <span className="material-symbols-outlined">Crear</span>
                 </Link>
-            )} */}
 
-            <Link to={`/materia/`} className='btn btn-primary'>
-                <span className="material-symbols-outlined">Crear</span>
-            </Link>
+            </div>
+
+            <table className='table'>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre Materia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {materias.length === 0 ? (
+                        <tr>
+                            <td colSpan="5" className="text-center">No hay materias registradas.</td>
+                        </tr>
+                    ) : (
+                        filas
+                    )}
+                </tbody>
+            </table>
+
         </>
-    );
-};
-
-export default Materias;
+    )
+}
