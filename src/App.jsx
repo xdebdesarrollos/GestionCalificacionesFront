@@ -16,7 +16,7 @@ import ReservaEdit from "./pages/ReservaEdit";
 import Reservas from "./pages/Reservas";
 import LandingPage from "./pages/LandingPage";
 import Materias from "./pages/Materias";
-
+import CrearMateria from "./pages/CrearMateria";
 
 function App() {
     return (
@@ -36,7 +36,7 @@ function App() {
 
                         {/* Rutas del MENU */}
                         <Route path="/materias" element={<Materias />} />
-                        <Route path="/vehiculo/crear/" element={<VehiculoEdit />} />
+                        <Route path="/materias/crear/" element={<CrearMateria />} />
                         <Route path="/vehiculo/edit/:matricula" element={<VehiculoEdit />} />
 
 

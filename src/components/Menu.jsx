@@ -58,7 +58,7 @@ export default function Menu() {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                     to="#">
-                                    Otros
+                                    Mis Datos
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li><Link className="dropdown-item" to="/clinica">Clinica</Link></li>

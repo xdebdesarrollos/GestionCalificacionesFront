@@ -147,16 +147,6 @@ button[type="submit"]:hover {
 
 /* Estilos básicos para crear cuenta*/
 .crear-cuenta-container {
- /*   width: 100%; /* Ocupa el 90% del ancho de la pantalla */
- /*   max-width: 1200px; /* Ancho máximo */
-  /*  margin: 10px 30px; /* Centrado horizontal y margen superior más pequeño */
- /*   padding: 40px; /* Espaciado interno ajustado */
- /*   padding-top: 40px;
-    background-color: white;
-    border-radius: 50px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;*/
     width: 90%; /* Se ajusta al 90% del ancho de la pantalla */
     max-width: 600px; /* Ancho máximo para pantallas grandes */
     margin: 0 auto; /* Centrar en la pantalla */
@@ -229,6 +219,11 @@ button[type="submit"]:hover {
     font-size: 0.8rem; /* Tamaño de fuente reducido */
     margin-top: 3px;
   }
-  
-  
+
+  .crear-materia-container form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Dos columnas iguales */
+    column-gap: 10px; /* Espacio entre columnas ajustado */
+    row-gap: 15px; /* Espacio entre filas ajustado */
+  }
   
